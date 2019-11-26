@@ -1,7 +1,7 @@
 // This function represents the basic AI class in the game. The AI's primary functions are to know its intelligence level and what game it's playing.
 
 var AI = function(level) {
-  var levelOfIntelligence = level;
+  var AIIntelligence = level;
 
   // Stores the game being played
   var game = {};
@@ -53,22 +53,6 @@ var AI = function(level) {
     }
   }
 
-  // move functions based on a given level of intelligence. turn is the player to play, either white or black
-  // ai chooses a random move
-  function takeARandomMove(turn) {
-    var available = game.currentState.allValidMoves(turn);
-    var randomPosition = available[Math.floor(Math.random() * available.length)];
-    var action = new AIAction(randomPosition[0],randomPosition[1]);
-
-    var next = action.applyTo(game.currentState);
-
-    human.playMove(next);
-
-    $('.current-turn').html("White");
-
-    game.advanceTo(next);
-  }
-
   // ai chooses the optimal move 40% of the time, suboptimal (2nd choice) 60%
   function takeANoviceMove(turn) {
     var available = game.currentState.allValidMoves(turn);
@@ -106,7 +90,7 @@ var AI = function(level) {
   }
 
   // ai chooses the optimal move
-  function takeAOptimalMove(turn) {
+  function takeAMediumMove(turn) {
     var available = game.currentState.allValidMoves(turn);
     var availableActions = [];
 
@@ -150,17 +134,13 @@ var AI = function(level) {
 
   // Method to specify the level of intelligence
   this.notify = function(turn) {
-    switch(levelOfIntelligence) {
-      case "random":
-        takeARandomMove(turn);
-      break;
-
+    switch(AIIntelligence) {
       case "novice":
         takeANoviceMove(turn);
       break;
 
-      case "optimal":
-        takeAOptimalMove(turn);
+      case "medium":
+        takeAMediumMove(turn);
       break;
     }
   }
