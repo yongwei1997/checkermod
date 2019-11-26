@@ -8,6 +8,7 @@
   height: 500px;
   width: 500px;
   margin: 0 auto;
+  margin-bottom:-60px;
 }
 
 .cell {
@@ -17,10 +18,11 @@
 }
 
 .scoreboard {
-  position: absolute;
+  position:absolute;
+  height:auto;
   font-family: "Roboto", sans-serif;
   top: 20px;
-  right: 20px;
+  left: 20px;
   background-color:rgba(227, 196, 227, 1);
   padding:20px;
   border-radius:10px;
@@ -32,8 +34,8 @@
   width: 45px;
   display: inline-block;
   border: 1px black solid;
-  background-color: white;
-  color: white;
+  background-color: rgb(240,210,180);
+  color: rgb(240,210,180);
 }
 
 .fa {
@@ -45,7 +47,7 @@
   width: 45px;
   display: inline-block;
   border: 1px black solid;
-  background-color: red;
+  background-color: rgb(192,103,103);
 }
 
 .empty {
@@ -53,8 +55,8 @@
   width: 45px;
   display: inline-block;
   border: 1px black solid;
-  background-color: red;
-  color: red;
+  background-color: rgb(192,103,103);
+  color: rgb(192,103,103);
 }
 
 .title {
@@ -85,7 +87,7 @@
 }
 
 .start {
-  margin-top: 20px;
+  margin-top: 10px;
   width: 120px;
   height: 100px;
   background-color: #000;
@@ -115,7 +117,7 @@
 
 .ingame {
   display: none;
-  color: black;
+  color: white;
 }
 
 .ingame > p {
